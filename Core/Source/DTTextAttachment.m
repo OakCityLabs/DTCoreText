@@ -252,6 +252,15 @@ static NSMutableDictionary *_classForTagNameLookup = nil;
 	_displaySize = displaySize;
 }
 
+- (CGRect)attachmentBoundsForAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes
+							   location:(id <NSTextLocation>)location
+						  textContainer:(nullable NSTextContainer *)textContainer
+				   proposedLineFragment:(CGRect)proposedLineFragment
+							   position:(CGPoint)position {
+	return CGRectMake(0, 0, _displaySize.width, _displaySize.height);
+}
+
+
 @synthesize originalSize = _originalSize;
 @synthesize displaySize = _displaySize;
 @synthesize contentURL = _contentURL;
